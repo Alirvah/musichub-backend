@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<p><a class="btn btn-default" href="{% url 'bookit_event_list' %}">Event Listing</a></p>
+<table class="table">
+<tr><td>name</td><td>{{ object.name }}</td></tr>
+<tr><td>created</td><td>{{ object.created }}</td></tr>
+<tr><td>start</td><td>{{ object.start }}</td></tr>
+<tr><td>end</td><td>{{ object.end }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit Event</a>
+
+{% endblock %}
